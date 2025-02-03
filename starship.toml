@@ -1,0 +1,30 @@
+add_newline = false
+command_timeout = 1000
+
+format = """$python$directory$character$git_branch$git_status"""
+
+# Replace the '❯' symbol in the prompt with '➜'
+[character] # The name of the module we are configuring is 'character'
+success_symbol = "[➜](bold green)" # The 'success_symbol' segment is being set to '➜' with the color 'bold green'
+error_symbol = "[✗](bold red)"
+
+[directory]
+truncation_length = 1
+format = '[$path]($style)[$symbol]($style) '
+style = 'bold blue'
+
+
+[python]
+#pyenv_version_name = true
+format = '[(\($virtualenv\) )]($style)'
+style = "bold yellow"
+pyenv_prefix = "venv "
+python_binary = ["./venv/bin/python", "python", "python3", "python2"]
+detect_extensions = ["py"]
+version_format = "v${raw}"
+
+[git_branch]
+
+format = "[$branch]($style) "
+style = "bold purple"
+
