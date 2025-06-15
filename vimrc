@@ -1,17 +1,49 @@
-" --------------
-" Basic Settings
-" --------------
-imap jj <esc>    " Quicky escape to normal mode
+
+inoremap jj <esc> " Quick Escape to normal mode
+set nocompatible
+filetype off
+
+set relativenumber " line numbers
 set noshowmode
-set relativenumber
-syntax on
-colorscheme pablo
-set cursorline " Highlight the line that cursor is on
-set tabstop=4  " How many characters wide the tab character should be
-set autoindent  " Copy indent level from previous line when starting a new line
-set hlsearch 	" Highlight search matches
-set ignorecase  " Case insensitive searches...
-set smartcase    " ...unless specifically searching for something with uppercase characters
-set incsearch    " Start searching while typing
-set nocompatible " Required by various plugins to work
-filetype plugin indent on    " required
+set tabstop=4
+set hlsearch
+set smartcase
+set fileformat=unix
+set fileencoding=utf-8
+set t_Co=256
+set t_ut=
+set clipboard=unamedplus
+syntax enable
+set laststatus=2
+set shiftwidth=4
+set autoindent
+set noexpandtab
+
+filetype plugin indent on
+let mapleader = "\<space>"
+nnoremap <leader>t :below terminal<CR>
+
+" better window navigation
+nnoremap <C-h> <C-w>h
+nnoremap <C-j> <C-w>j
+nnoremap <C-k> <C-w>k
+nnoremap <C-l> <C-w>l
+
+
+
+call plug#begin()
+Plug 'sheerun/vim-polyglot'
+Plug 'joshdick/onedark.vim' " Plugin for colorscheme 
+Plug 'jiangmiao/auto-pairs'
+Plug 'vim-airline/vim-airline'
+Plug 'preservim/nerdtree'
+call plug#end()
+"  plugins Setup
+colorscheme onedark
+
+" nerdtree plugin settings
+nnoremap <leader> n: NERDTreeFocus<CR>
+nnoremap <C-n> :NERDTree<CR>
+nnoremap <C-t> :NERDTreeToggle<CR>
+nnoremap <C-f> :NERDTreeFind<CR>
+
