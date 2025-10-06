@@ -3,6 +3,7 @@ set nocompatible
 filetype off
 
 set relativenumber " line numbers
+set nu
 set noshowmode
 set tabstop=4
 set hlsearch
