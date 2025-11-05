@@ -23,6 +23,13 @@ filetype plugin indent on
 let mapleader = "\<space>"
 nnoremap <leader>t :below terminal<CR>
 
+" tabs navigation
+nnoremap <leader>n :tabnew<CR>
+nnoremap <leader>m :tabprevious<CR>
+nnoremap <leader>, :tabnext<CR>
+
+
+
 " better window navigation
 nnoremap <C-h> <C-w>h
 nnoremap <C-j> <C-w>j

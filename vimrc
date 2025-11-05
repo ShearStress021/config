@@ -23,11 +23,17 @@ let mapleader = "\<space>"
 nnoremap <leader>t :below terminal<CR>
 set shellslash
 
+
+" tabs navigation
+nnoremap <leader>n :tabnew<CR>
+nnoremap <leader>m :tabprevious<CR>
+nnoremap <leader>, :tabnext<CR>
+
 " better window navigation
-" nnoremap <C-h> <C-w>h
-" nnoremap <C-j> <C-w>j
-" nnoremap <C-k> <C-w>k
-" nnoremap <C-l> <C-w>l
+nnoremap <C-h> <C-w>h
+nnoremap <C-j> <C-w>j
+nnoremap <C-k> <C-w>k
+nnoremap <C-l> <C-w>l
 "
 "
 "
