@@ -23,12 +23,20 @@ filetype plugin indent on
 let mapleader = "\<space>"
 nnoremap <leader>t :below terminal<CR>
 
+
+"tabs new
+nnoremap <leader>c :tabnew<CR>
+nnoremap <leader>m :tabprevious<CR>
+nnoremap <leader>, :tabnext<CR>
 " better window navigation
 nnoremap <C-h> <C-w>h
 nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
 
+if has('nvim') || has('termguicolors')
+  set termguicolors
+endif
 set rtp+=~/.vim/bundle/Vundle.vim
 
 call vundle#begin()
@@ -39,16 +47,33 @@ Plugin 'jiangmiao/auto-pairs'
 Plugin 'vim-airline/vim-airline'
 Plugin 'preservim/nerdtree'
 Plugin 'Valloric/YouCompleteMe'
+Plugin 'sts10/vim-pink-moon'
 call vundle#end()
 "  plugins Setup
-colorscheme onedark
+colorscheme onedark 
 
 " nerdtree plugin settings
-nnoremap <leader> n: NERDTreeFocus<CR>
+" nnoremap <leader> n: NERDTreeFocus<CR>
 nnoremap <C-n> :NERDTree<CR>
 nnoremap <C-t> :NERDTreeToggle<CR>
 nnoremap <C-f> :NERDTreeFind<CR>
 
 " You Complete Me settiing
 let g:ycm_autoclose_preview_window_after_completion=1
+let g:ycm_use_clangd = 1
+let g:ycm_global_ycm_extra_conf = '~/.ycm_extra_conf.py'
+let g:ycm_clangd_uses_ycmd_caching = 1
 map <leader>g  :YcmCompleter GoToDefinitionElseDeclaration<CR>
+
+
+" backgtound
+
+highlight Normal guibg=NONE ctermbg=NONE
+highlight LineNr guibg=NONE ctermbg=NONE
+highlight SignColumn guibg=NONE ctermbg=NONE
+highlight EndOfBuffer guibg=NONE ctermbg=NONE
+
+
+let g:lightline = {"colorscheme": "onedark"}
+
+
