@@ -46,8 +46,9 @@ Plugin 'joshdick/onedark.vim' " Plugin for colorscheme
 Plugin 'jiangmiao/auto-pairs'
 Plugin 'vim-airline/vim-airline'
 Plugin 'preservim/nerdtree'
-Plugin 'Valloric/YouCompleteMe'
+"Plugin 'Valloric/YouCompleteMe'
 Plugin 'sts10/vim-pink-moon'
+Plugin 'neoclide/coc.nvim', {'branch': 'release'}
 call vundle#end()
 "  plugins Setup
 colorscheme onedark 
@@ -59,10 +60,10 @@ nnoremap <C-t> :NERDTreeToggle<CR>
 nnoremap <C-f> :NERDTreeFind<CR>
 
 " You Complete Me settiing
-let g:ycm_autoclose_preview_window_after_completion=1
-let g:ycm_use_clangd = 1
-let g:ycm_global_ycm_extra_conf = '~/.ycm_extra_conf.py'
-let g:ycm_clangd_uses_ycmd_caching = 1
+"let g:ycm_autoclose_preview_window_after_completion=1
+"let g:ycm_use_clangd = 1
+"let g:ycm_global_ycm_extra_conf = '~/.ycm_extra_conf.py'
+"let g:ycm_clangd_uses_ycmd_caching = 1
 map <leader>g  :YcmCompleter GoToDefinitionElseDeclaration<CR>
 
 
@@ -76,4 +77,16 @@ highlight EndOfBuffer guibg=NONE ctermbg=NONE
 
 let g:lightline = {"colorscheme": "onedark"}
 
+" Coc plugin settings
 
+function! CheckBackspace() abort
+  let col = col('.') - 1
+  return !col || getline('.')[col - 1]  =~# '\s'
+endfunction
+
+" other plugin before putting this into your config
+inoremap <silent><expr> <TAB>
+      \ coc#pum#visible() ? coc#pum#next(1) :
+      \ CheckBackspace() ? "\<Tab>" :
+      \ coc#refresh()
+inoremap <expr><S-TAB> coc#pum#visible() ? coc#pum#prev(1) : "\<C-h>"
