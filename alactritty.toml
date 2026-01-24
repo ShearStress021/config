@@ -1,0 +1,26 @@
+
+[window]
+decorations = "buttonless"
+blur = true
+opacity = 0.85
+padding = {x = 5, y = 5}
+
+[font]
+size = 15.5
+
+
+[colors.primary]
+background = "#000000"
+foreground = "#cdcecf"
+dim_foreground = "#aeafb0"
+bright_foreground = "#d6d6d7"
+
+
+
+[colors.cursor]
+text = "#cdcecf"
+cursor = "#aeafb0"
+
+[colors.vi_mode_cursor]
+text = "#cdcecf"
+cursor = "#63cdcf"
