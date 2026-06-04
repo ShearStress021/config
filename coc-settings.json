@@ -1,0 +1,7 @@
+{
+	"clangd.path" : "/usr/bin/clangd",
+	"clangd.arguments" : ["--function-arg-placeholders=false"],
+	"inlayHint.enable": false,
+	"clangd.inlayHints.parameterNames": false,
+	"clangd.fallbackFlags": ["--std=c++20"]
+}
