@@ -30,7 +30,7 @@ nnoremap <leader>m :tabprevious<CR>
 nnoremap <leader>, :Ex<CR>
 
 
-nnoremap <silent> <C-c> :noh<CR>
+nnoremap <leader>h :nohlsearch<CR>
 
 " better window navigation
 nnoremap <C-h> <C-w>h
