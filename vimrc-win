@@ -1,4 +1,5 @@
-c> " Quick Escape to normal mode
+" Remap jj to escape insert mode
+inoremap jj <Esc>
 set nocompatible
 filetype off
 
@@ -19,18 +20,26 @@ set shiftwidth=4
 set autoindent
 set noexpandtab
 
+set shellslash
+
 filetype plugin indent on
 let mapleader = "\<space>"
 nnoremap <leader>t :below terminal<CR>
+nnoremap <leader>, :Ex<CR>
+nnoremap <leader>c :tabnew<CR>
+nnoremap <leader>h :nohlsearch<CR>
+
+" nnoremap <C-d> <C-d>zz
+" nnoremap <C-y> <C-d>zz
 
 " better window navigation
-" nnoremap <C-h> <C-w>h
-" nnoremap <C-j> <C-w>j
-" nnoremap <C-k> <C-w>k
-" nnoremap <C-l> <C-w>l
-"
+nnoremap <C-h> <C-w>h
+nnoremap <C-j> <C-w>j
+nnoremap <C-k> <C-w>k
+nnoremap <C-l> <C-w>l
+
 set rtp+=~/vimfiles/bundle/Vundle.vim
-"
+
 call vundle#begin("~/vimfiles/bundle")
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'sheerun/vim-polyglot'
@@ -40,26 +49,22 @@ Plugin 'vim-airline/vim-airline'
 Plugin 'preservim/nerdtree'
 Plugin 'Valloric/YouCompleteMe'
 call vundle#end()
-"
-"" theme color setups
+
+" theme color setups
 let g:onedark_termcolors=256
 colorscheme onedark
 
 " nerdtree plugin settings
-" nnoremap <leader> n: NERDTreeFocus<CR>
-" nnoremap <C-n> :NERDTree<CR>
-" nnoremap <C-t> :NERDTreeToggle<CR>
-" nnoremap <C-f> :NERDTreeFind<CR>
-"
-"" You Complete Me settiing
+nnoremap <leader> n: NERDTreeFocus<CR>
+nnoremap <C-n> :NERDTree<CR>
+nnoremap <C-t> :NERDTreeToggle<CR>
+nnoremap <C-f> :NERDTreeFind<CR>
+
+" You Complete Me settiing
 let g:ycm_autoclose_preview_window_after_completion=1
 map <leader>g  :YcmCompleter GoToDefinitionElseDeclaration<CR>
 " highlighting line
-" let g:lightline = {
-"   \ 'colorscheme': 'onedark',
-"     \ }
-"     " background black
-"     highlight Normal guibg=grey80 ctermbg=None"
-" }"
-" "
-" "noremap 
+let g:lightline = {
+  \ 'colorscheme': 'onedark',
+  \ }
+" background black
