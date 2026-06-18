@@ -28,6 +28,10 @@ nnoremap <leader>t :below terminal<CR>
 nnoremap <leader>c :tabnew<CR>
 nnoremap <leader>m :tabprevious<CR>
 nnoremap <leader>, :Ex<CR>
+
+
+nnoremap <silent> <C-c> :noh<CR>
+
 " better window navigation
 nnoremap <C-h> <C-w>h
 nnoremap <C-j> <C-w>j
